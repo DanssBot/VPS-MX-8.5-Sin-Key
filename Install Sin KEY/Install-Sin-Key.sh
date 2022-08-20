@@ -50,7 +50,7 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By NEAR ❌\033[1;33m ]"
+  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By DANSBOTMX ❌\033[1;33m ]"
   msg -bar
   echo -e "\033[97m"
   echo -e "  \033[41m    -- INSTALACION DE PAQUETES --    \e[49m"
@@ -176,7 +176,7 @@ install_paketes
 mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
-wget https://www.dropbox.com/s/tjkv9xrft2bgx3p/VPS-MX.tar.xz >/dev/null 2>&1
+wget https://www.dropbox.com/s/jvri7sanff91o6v/vps-mx.tar.xz >/dev/null 2>&1
 tar -xf VPS-MX.tar.xz >/dev/null 2>&1
 chmod +x VPS-MX.tar.xz >/dev/null 2>&1
 rm -rf VPS-MX.tar.xz
