@@ -201,7 +201,7 @@ echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
 rm -rf /etc/VPS-MX/herramientas/speed.sh
 rm -rf /etc/VPS-MX/herramientas/speedtest.py
 cd /etc/VPS-MX/herramientas
-wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
 tar -xf speedtest_v1.tar >/dev/null 2>&1
 rm -rf speedtest_v1.tar >/dev/null 2>&1
 cd
@@ -210,20 +210,20 @@ cd
 [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
 [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
 msg -ama "               Finalizando Instalacion" && msg bar2
-[[ $(find /etc/VPS-MX/controlador -name nombre.log | grep -w "nombre.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log | grep -w "IDT.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log | grep -w "tiemlim.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/tiemlim.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name nombre.log | grep -w "nombre.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/DanssBot/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/nombre.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name IDT.log | grep -w "IDT.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/DanssBot/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/IDT.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name tiemlim.log | grep -w "tiemlim.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/DanssBot/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/tiemlim.log &>/dev/null
 touch /usr/share/lognull &>/dev/null
-wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SR/SPR -O /usr/bin/SPR &>/dev/null &>/dev/null
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SR/SPR -O /usr/bin/SPR &>/dev/null &>/dev/null
 chmod 775 /usr/bin/SPR &>/dev/null
 wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/dz1onkls1685hc2/soporte &>/dev/null
 chmod 775 /usr/bin/SOPORTE &>/dev/null
 SOPORTE &>/dev/null
-wget -O /bin/rebootnb https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/rebootnb &>/dev/null
+wget -O /bin/rebootnb https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/rebootnb &>/dev/null
 chmod +x /bin/rebootnb
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
 chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
