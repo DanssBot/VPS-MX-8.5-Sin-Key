@@ -183,7 +183,6 @@ chmod -R 755 /etc/VPS-MX
 rm -rf /etc/VPS-MX/MEUIPvps
 echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
 echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/LINKS-LIBRERIAS/monitor.sh -P /bin/
 echo "$slogan" >/etc/VPS-AGN/message.txt
 [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
 [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
