@@ -228,7 +228,7 @@ msg -bar2
 print_center -ama "LISTADO DE SCRIPT DISPONIBLES"
 msg -bar
 #-BASH SOPORTE ONLINE
-wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/LINKS-LIBRERIAS/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
 #NEAR 8.5 MOD
 install_near() {
@@ -242,7 +242,7 @@ install_near() {
   mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
-wget https://www.dropbox.com/s/9uhue78uqszlelf/VPS-MX.tar.xz >/dev/null 2>&1
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
 tar -xf VPS-MX.tar.xz >/dev/null 2>&1
 chmod +x VPS-MX.tar.xz >/dev/null 2>&1
 rm -rf VPS-MX.tar.xz
