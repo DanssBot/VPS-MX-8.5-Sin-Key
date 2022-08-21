@@ -183,7 +183,7 @@ chmod -R 755 /etc/VPS-MX
 rm -rf /etc/VPS-MX/MEUIPvps
 echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
 echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/LINKS-LIBRERIAS/monitor.sh -P /bin/
 echo "$slogan" >/etc/VPS-AGN/message.txt
 [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
 [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
@@ -210,9 +210,11 @@ chmod +x /bin/resetsshdrop
 wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
+rm -rf /usr/local/lib/systemubu1 &>/dev/null
+rm -rf /etc/versin_script &>/dev/null
 v1=$(curl -sSL "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
 echo "$v1" > /etc/versin_script
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
 echo '#!/bin/sh -e' >/etc/rc.local
 sudo chmod +x /etc/rc.local
 echo "sudo resetsshdrop" >>/etc/rc.local
