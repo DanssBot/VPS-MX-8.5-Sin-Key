@@ -49,6 +49,7 @@ install_paketes() {
   ### PAQUETES PRINCIPALES
   msg -bar2
   msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By DANSBOTMX ❌\033[1;33m ]"
+echo -e " \e[5m\033[1;100m   =====>> ►►  🖥  SCRIPT | LATAM  🖥  ◄◄ <<=====   \033[1;37m"
   msg -bar
   echo -e "\033[97m"
   echo -e "  \033[41m    -- INSTALACION DE PAQUETES --    \e[49m"
