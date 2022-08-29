@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion")
+v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -116,7 +116,7 @@ os_system() {
 }
 
 repo() {
-  link="https://raw.githubusercontent.com/khaledagn/Multi-Script/main/Source-List/20.04.list"
+  link="https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/Repositorios/$1.list"
   case $1 in
   8 | 9 | 10 | 11 | 16.04 | 18.04 | 20.04 | 20.10 | 21.04 | 21.10 | 22.04) wget -O /etc/apt/sources.list ${link} &>/dev/null ;;
   esac
@@ -155,7 +155,7 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTULIZACION DE SISTEMA COMPLETA"
   print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
   msg -bar
@@ -164,7 +164,7 @@ post_reboot() {
 install_start() {
   msg -bar
 
-  echo -e "\e[1;97m           \e[5m\033[1;100m   ACTULIZACION DE SISTEMA   \033[1;37m"
+  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  ACTUALIZANDO...  🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
   print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
   msg -bar3
@@ -222,13 +222,13 @@ while :; do
 done
 
 clear && clear
-msg -bar
-echo -e " \e[5m\033[1;100m   =====>> ►►  🖥  SCRIPT | LATAM  🖥  ◄◄ <<=====   \033[1;37m"
-msg -bar
+msg -bar2
+echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 MULTI2 - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
+msg -bar2
 print_center -ama "LISTADO DE SCRIPT DISPONIBLES"
 msg -bar
 #-BASH SOPORTE ONLINE
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/LINKS-LIBRERIAS/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
+wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
 #NEAR 8.5 MOD
 install_near() {
@@ -242,7 +242,7 @@ install_near() {
   mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
-wget https://www.dropbox.com/s/hv0a62t53abni6e/VPS-MX.tar.xz >/dev/null 2>&1
+wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
 tar -xf VPS-MX.tar.xz >/dev/null 2>&1
 chmod +x VPS-MX.tar.xz >/dev/null 2>&1
 rm -rf VPS-MX.tar.xz
@@ -268,7 +268,7 @@ echo "$slogan" >/etc/VPS-MX/message.txt
 rm -rf /etc/VPS-MX/herramientas/speed.sh
 rm -rf /etc/VPS-MX/herramientas/speedtest.py
 cd /etc/VPS-MX/herramientas
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
+wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
 tar -xf speedtest_v1.tar >/dev/null 2>&1
 rm -rf speedtest_v1.tar >/dev/null 2>&1
 cd
@@ -281,19 +281,19 @@ msg -ama "               Finalizando Instalacion" && msg bar2
 [[ $(find /etc/VPS-MX/controlador -name IDT.log | grep -w "IDT.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/IDT.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name tiemlim.log | grep -w "tiemlim.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/tiemlim.log &>/dev/null
 touch /usr/share/lognull &>/dev/null
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SR/SPR -O /usr/bin/SPR &>/dev/null &>/dev/null
+wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SR/SPR -O /usr/bin/SPR &>/dev/null &>/dev/null
 chmod 775 /usr/bin/SPR &>/dev/null
 wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/dz1onkls1685hc2/soporte &>/dev/null
 chmod 775 /usr/bin/SOPORTE &>/dev/null
 SOPORTE &>/dev/null
-wget -O /bin/rebootnb https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/rebootnb &>/dev/null
+wget -O /bin/rebootnb https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/rebootnb &>/dev/null
 chmod +x /bin/rebootnb
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
 chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
-v1=$(curl -sSL "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
+v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
 echo "$v1" > /etc/versin_script 
 msg -bar2
 echo '#!/bin/sh -e' >/etc/rc.local
@@ -303,21 +303,19 @@ echo "sudo resetsshdrop" >>/etc/rc.local
 echo "sleep 2s" >>/etc/rc.local
 echo "exit 0" >>/etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
-echo 'clear' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Vercion &>/dev/null' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
-  echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
+echo 'clear && clear' >>.bashrc
+echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'figlet -w 85 -f smslant "         SCRIPT
+     DANSMX"   | lolcat' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
+echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
+echo 'echo "" ' >>.bashrc
+echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
+echo 'echo "" ' >>.bashrc
+  echo 'echo -e "\t\033[97mMOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   clear && clear
   msg -bar
@@ -340,7 +338,7 @@ install_oficial() {
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.4g%20Oficial/VPS-MX.tar.xz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
   tar -xf VPS-MX.tar.xz >/dev/null 2>&1
   chmod +x VPS-MX.tar.xz >/dev/null 2>&1
   rm -rf VPS-MX.tar.xz
@@ -421,7 +419,7 @@ install_mod() {
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/VPS-MX.tar.xz >/dev/null 2>&1
+  wget https://www.dropbox.com/s/a9ly2nulltoakmg/VPS-MX.tar.xz >/dev/null 2>&1
   tar -xf VPS-MX.tar.xz >/dev/null 2>&1
   chmod +x VPS-MX.tar.xz >/dev/null 2>&1
   rm -rf VPS-MX.tar.xz
@@ -639,12 +637,12 @@ install_ChumoGH() {
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR NEAR 8.5 MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 8.6x MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m5\e[1;93m]\033[1;31m > \033[1;97m INSTALAR LATAM 1.1g (Organizando ficheros) \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR DANSBOT 8.7x MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 8.6x MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m5\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m6\e[1;93m]\033[1;31m > \033[1;97m INSTALAR LATAM 1.1g (Organizando ficheros) \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao
