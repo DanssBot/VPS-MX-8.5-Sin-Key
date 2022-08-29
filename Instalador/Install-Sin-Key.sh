@@ -1,5 +1,11 @@
 #!/bin/bash
 clear && clear
+module="$(pwd)/module"
+ rm -rf ${module}
+ wget -O ${module} "https://raw.githubusercontent.com/rudi9999/Herramientas/main/module/module" &>/dev/null
+ [[ ! -e ${module} ]] && exit
+ chmod +x ${module} &>/dev/null
+ source ${module}
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 
@@ -184,7 +190,7 @@ install_start() {
 install_continue() {
   os_system
   msg -bar
-  echo -e "      \e[5m\033[1;100m   COMPLETANDO PAQUETES PARA EL SCRIPT   \033[1;37m"
+  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ INSTALANDO PAQUETES 🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
   print_center -ama "$distro $vercion"
   print_center -verd "INSTALANDO DEPENDENCIAS"
@@ -225,7 +231,7 @@ clear && clear
 msg -bar2
 echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 MULTI2 - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
 msg -bar2
-print_center -ama "LISTADO DE SCRIPT DISPONIBLES"
+print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
