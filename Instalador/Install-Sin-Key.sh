@@ -226,10 +226,36 @@ while :; do
   *) exit ;;
   esac
 done
+#KEY DE VERIFICACION
+clear
+echo -e "\E[44;1;37m    INSTALANDO DANSMX    \E[0m"
+echo ""
+echo -e "DANSMX" | figlet
+echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
+echo ""
+chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
+
+read -p "DIGITE LA CLAVE DE INSTALACION: " key
+    
+         if [[ "$key" = "$chave" ]]
+          then
+               echo -e "[*] VALIDANDO LA CLAVE ⏳"
+                sleep 2
+                echo $key > /bin/chave_inst
+                echo -e "[*] CLAVE CORRECTA"
+                sleep 2
+            else
+            echo "[-] 👥 LA CLAVE NO ES VALIDA!"
+            sleep 3
+            clear
+            cat /dev/null > ~/.bash_history && history -c
+            rm /bin/ubuinst* > /dev/null 2>&1
+            exit;
+          fi
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 MULTI2 - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT DANSMX 🖥️  ◄◄ <<=====   \033[1;37m"
 msg -bar2
 print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
 msg -bar
