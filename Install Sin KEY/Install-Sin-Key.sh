@@ -223,15 +223,15 @@ echo 'clear && clear' >>.bashrc
 echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'figlet -w 85 -f smslant "         DANS
-     BOT"   | lolcat' >>.bashrc
+echo 'figlet -w 85 -f smslant "         SCRIPT
+     DANSMX"   | lolcat' >>.bashrc
 echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[92m -->>SLOGAN : $mess1 "' >>.bashrc
+echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
+echo 'echo -e "\t\033[97mMOSTRAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;41m               sudo VPSMX o menu            \033[0;37m" && msg -bar2
