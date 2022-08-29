@@ -222,14 +222,9 @@ while :; do
 done
 
 clear && clear
-echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'figlet -w 65 -f smslant "         BIENVENIDO
-         "   | lolcat' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-msg -bar2
+msg -bar
+echo -e " \e[5m\033[1;100m   =====>> ►►  🖥  SCRIPT | LATAM  🖥  ◄◄ <<=====   \033[1;37m"
+msg -bar
 print_center -ama "LISTADO DE SCRIPT DISPONIBLES"
 msg -bar
 #-BASH SOPORTE ONLINE
