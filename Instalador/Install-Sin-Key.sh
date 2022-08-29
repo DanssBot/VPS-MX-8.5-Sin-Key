@@ -1,11 +1,5 @@
 #!/bin/bash
 clear && clear
-module="$(pwd)/module"
- rm -rf ${module}
- wget -O ${module} "https://raw.githubusercontent.com/rudi9999/Herramientas/main/module/module" &>/dev/null
- [[ ! -e ${module} ]] && exit
- chmod +x ${module} &>/dev/null
- source ${module}
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 
