@@ -532,7 +532,7 @@ install_ADMRufu() {
   echo -e "[[ \$(date '+%s' -d \$up) -gt \$(date '+%s' -d \$(cat /etc/ADMRufu/vercion)) ]] && v2=\"Nueva Vercion disponible: \$v >>> \$up\" || v2=\"Script Vercion: \$v\"" >>/etc/bash.bashrc
   echo '[[ -e "/etc/ADMRufu/tmp/message.txt" ]] && mess1="$(less /etc/ADMRufu/tmp/message.txt)"' >>/etc/bash.bashrc
   echo '[[ -z "$mess1" ]] && mess1="@Rufu99"' >>/etc/bash.bashrc
-  echo 'clear && echo -e "\n$(figlet -f big.flf "  ADMRufu")\n        RESELLER : $mess1 \n\n   Para iniciar ADMRufu escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
+  echo 'clear && echo -e "\n$(figlet -f big.flf "  DANSMX")\n        RESELLER : $mess1 \n\n   Para iniciar DANSMX escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
 
   update-locale LANG=en_US.UTF-8 LANGUAGE=en
   clear && clear
