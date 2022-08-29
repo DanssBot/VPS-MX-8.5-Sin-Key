@@ -176,7 +176,7 @@ read -p "DIGITE LA CLAVE DE INSTALACION: " key
                echo -e "[*] ANALIZANDO CLAVE DEL SERVIDOR ⏳"
                 sleep 2
                 echo $key > /bin/chave_inst
-                echo -e "[✅] CLAVE CORRECTA"
+                echo -e "[✅] CONEXIÓN EXITOSA"
                 sleep 2
             else
             echo "[-] 👥 LA CLAVE NO ES VALIDA!"
