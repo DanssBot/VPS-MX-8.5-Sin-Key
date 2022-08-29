@@ -222,7 +222,7 @@ while :; do
 done
 
 clear && clear
-msg -bar2
+echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
 echo 'figlet -w 65 -f smslant "         BIENVENIDO
