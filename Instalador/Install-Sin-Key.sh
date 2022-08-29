@@ -170,7 +170,7 @@ post_reboot() {
 install_start() {
   msg -bar
 
-  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  ACTUALIZANDO...  🖥️  ◄◄ <<=====   \033[1;37m"
+  echo -e " \e[5m\033[1;100m   =====>> ►► ⏳ ACTUALIZANDO ⏳ ◄◄ <<=====   \033[1;37m"
   msg -bar
   print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
   msg -bar3
