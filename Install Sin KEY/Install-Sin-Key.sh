@@ -219,19 +219,17 @@ echo "sudo resetsshdrop" >>/etc/rc.local
 echo "sleep 2s" >>/etc/rc.local
 echo "exit 0" >>/etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
-echo 'clear' >>.bashrc
-echo 'echo ""' >>.bashrc
-echo 'echo -e "\t\033[91m     _   ___________    ____       _____           _       __ " ' >>.bashrc
-echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)___  / /_" ' >>.bashrc
-echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
-echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
-echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
-echo 'echo -e "\t\033[91m                                                /_/           " ' >>.bashrc
+echo 'clear && clear' >>.bashrc
+echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'figlet -w 85 -f smslant "         SCRIPT
+     LATAM"   | lolcat' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
+echo 'mess1="$(less -f /etc/SCRIPT-LATAM/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
-echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
+echo 'echo -e "\033[92m  -->> SLOGAN:\033[93m $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
