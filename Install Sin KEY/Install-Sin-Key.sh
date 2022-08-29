@@ -52,7 +52,9 @@ echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  SCRIPT | DANSMX  🖥️  
   msg -bar
   echo -e "\033[97m"
   echo -e "  \033[41m    =====>>>> INSTALANDO <<<<=====    \e[49m"
-  print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
+  echo -e -azu "=====>>>> ADMRufu <<<<====="|lolcat
+  figlet -w 12 -f smslant "         SCRIPT
+         LATAM  " | lolcat
   echo -e "\033[97m"
   msg -bar
   #grep
