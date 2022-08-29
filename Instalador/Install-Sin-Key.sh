@@ -242,7 +242,7 @@ install_near() {
   mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
-wget https://www.dropbox.com/s/ra5nb9yd3fw8t46/VPS-MX.tar.xz >/dev/null 2>&1
+wget https://www.dropbox.com/s/hv0a62t53abni6e/VPS-MX.tar.xz >/dev/null 2>&1
 tar -xf VPS-MX.tar.xz >/dev/null 2>&1
 chmod +x VPS-MX.tar.xz >/dev/null 2>&1
 rm -rf VPS-MX.tar.xz
