@@ -173,13 +173,13 @@ read -p "DIGITE LA CLAVE DE INSTALACION: " key
     
          if [[ "$key" = "$chave" ]]
           then
-               echo -e "[*] ANALIZANDO CLAVE DEL SERVIDOR ⏳"
+               echo -e "[*] INTENTANDO CONEXIÓN CON EL SERVIDOR 🖥️!"
                 sleep 2
                 echo $key > /bin/chave_inst
                 echo -e "[✅] CONEXIÓN EXITOSA"
                 sleep 2
             else
-            echo "[-] 👥 LA CLAVE NO ES VALIDA!"
+            echo "[-] 🚫 LA CONEXIÓN NO FUE POSIBLE ❌!"
             sleep 3
             clear
             cat /dev/null > ~/.bash_history && history -c
