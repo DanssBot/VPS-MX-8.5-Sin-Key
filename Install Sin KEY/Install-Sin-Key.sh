@@ -223,13 +223,13 @@ echo 'clear && clear' >>.bashrc
 echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'figlet -w 85 -f smslant "         SCRIPT
-     LATAM"   | lolcat' >>.bashrc
+echo 'figlet -w 85 -f smslant "         DANS
+     BOT"   | lolcat' >>.bashrc
 echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'mess1="$(less -f /etc/SCRIPT-LATAM/message.txt)" ' >>.bashrc
+echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'echo -e "\033[92m  -->> SLOGAN:\033[93m $mess1 "' >>.bashrc
+echo 'echo -e "\t\033[92m -->>SLOGAN : $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
