@@ -160,7 +160,9 @@ ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 apt install figlet -y
 clear
+msg -bar
 echo -e " \e[5m\033[1;100m   ====>> ►► 🔰 INSTALANDO DANSMX 🔰 ◄◄ <<====   \033[1;37m"
+msg -bar
 echo ""
 echo -e "DANSMX" | figlet
 echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
