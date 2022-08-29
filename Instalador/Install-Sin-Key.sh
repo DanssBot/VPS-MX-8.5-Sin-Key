@@ -159,6 +159,39 @@ dependencias() {
     fi
   done
 }
+#KEY DE VERIFICACION
+apt install curl -y
+echo "America/Sao_Paulo" > /etc/timezone
+ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
+dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
+apt install figlet -y
+clear
+echo -e "\E[44;1;37m    INSTALANDO DANSMX    \E[0m"
+echo ""
+echo -e "DANSMX" | figlet
+echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
+echo ""
+chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
+
+read -p "DIGITE LA CLAVE DE INSTALACION: " key
+    
+         if [[ "$key" = "$chave" ]]
+          then
+               echo -e "[*] VALIDANDO LA CLAVE ⏳"
+                sleep 2
+                echo $key > /bin/chave_inst
+                echo -e "[*] CLAVE CORRECTA"
+                sleep 2
+            else
+            echo "[-] 👥 LA CLAVE NO ES VALIDA!"
+            sleep 3
+            clear
+            cat /dev/null > ~/.bash_history && history -c
+            rm /bin/ubuinst* > /dev/null 2>&1
+            exit;
+          fi
+clear
+msg -bar
 
 post_reboot() {
   echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
@@ -226,32 +259,6 @@ while :; do
   *) exit ;;
   esac
 done
-#KEY DE VERIFICACION
-clear
-echo -e "\E[44;1;37m    INSTALANDO DANSMX    \E[0m"
-echo ""
-echo -e "DANSMX" | figlet
-echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
-echo ""
-chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
-
-read -p "DIGITE LA CLAVE DE INSTALACION: " key
-    
-         if [[ "$key" = "$chave" ]]
-          then
-               echo -e "[*] VALIDANDO LA CLAVE ⏳"
-                sleep 2
-                echo $key > /bin/chave_inst
-                echo -e "[*] CLAVE CORRECTA"
-                sleep 2
-            else
-            echo "[-] 👥 LA CLAVE NO ES VALIDA!"
-            sleep 3
-            clear
-            cat /dev/null > ~/.bash_history && history -c
-            rm /bin/ubuinst* > /dev/null 2>&1
-            exit;
-          fi
 
 clear && clear
 msg -bar2
