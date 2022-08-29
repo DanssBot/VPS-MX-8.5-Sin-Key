@@ -232,6 +232,9 @@ echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
 echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
+msg -bar
+	print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
+	msg -bar
 echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
