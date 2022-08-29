@@ -173,10 +173,10 @@ read -p "DIGITE LA CLAVE DE INSTALACION: " key
     
          if [[ "$key" = "$chave" ]]
           then
-               echo -e "[*] VALIDANDO LA CLAVE ⏳"
+               echo -e "[*] ANALIZANDO CLAVE DEL SERVIDOR ⏳"
                 sleep 2
                 echo $key > /bin/chave_inst
-                echo -e "[*] CLAVE CORRECTA"
+                echo -e "[✅] CLAVE CORRECTA"
                 sleep 2
             else
             echo "[-] 👥 LA CLAVE NO ES VALIDA!"
