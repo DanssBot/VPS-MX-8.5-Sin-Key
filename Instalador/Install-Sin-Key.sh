@@ -581,7 +581,7 @@ install_ChumoGH() {
   clear && clear
   mkdir /etc/adm-lite >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/NetVPS/Multi-Script/main/ChuG/adm-lite.tar.xz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/heshan3031/Multi-Script/main/ChuG/adm-lite.tar.xz >/dev/null 2>&1
   tar -xf adm-lite.tar.xz >/dev/null 2>&1
   chmod +x adm-lite.tar.xz >/dev/null 2>&1
   rm -rf /etc/adm-lite.tar.xz
@@ -635,7 +635,7 @@ install_ChumoGH() {
   rm -f /root/.bashrc.cp
   echo 'DATE=$(date +"%d-%m-%y")' >>/root/.bashrc
   echo 'TIME=$(date +"%T")' >>/root/.bashrc
-  echo 'figlet -k ChumoGH | lolcat' >>/root/.bashrc
+  echo 'figlet -k DANSMX | lolcat' >>/root/.bashrc
   echo 'echo -e ""' >>/root/.bashrc
   echo 'bash /bin/ejecutar/echo-ram.sh' >>/root/.bashrc
   echo 'echo -e " Fecha de Instalacion : " $(cat < /bin/ejecutar/fecha)' >>/root/.bashrc
