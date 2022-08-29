@@ -160,9 +160,9 @@ ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 apt install figlet -y
 clear
-echo -e "\E[44;1;37m    INSTALANDO DANSMX    \E[0m"
+echo -e " \e[5m\033[1;100m   ====>> ►► 🔰 INSTALANDO DANSMX 🔰 ◄◄ <<====   \033[1;37m"
 echo ""
-echo -e "DANSMX" | figlet
+echo 'figlet -w 85 -f smslant "DANSMX"
 echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
 echo ""
 chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
