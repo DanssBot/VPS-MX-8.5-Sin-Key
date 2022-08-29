@@ -48,11 +48,11 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By DANSBOTMX ❌\033[1;33m ]"
-echo -e " \e[5m\033[1;100m   =====>> ►►  🖥  SCRIPT | LATAM  🖥  ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  SCRIPT | DANSMX  🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
   echo -e "\033[97m"
-  echo -e "  \033[41m    -- INSTALACION DE PAQUETES --    \e[49m"
+  echo -e "  \033[41m    =====>>>> INSTALANDO <<<<=====    \e[49m"
+  print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
   echo -e "\033[97m"
   msg -bar
   #grep
