@@ -163,7 +163,7 @@ clear
 echo -e " \e[5m\033[1;100m   ====>> ►► 🔰 INSTALANDO DANSMX 🔰 ◄◄ <<====   \033[1;37m"
 echo ""
 echo 'figlet -w 85 -f smslant "         SCRIPT
-         LATAM"   | lolcat'
+         LATAM"   | lolcat' >>.bashrc
 echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
 echo ""
 chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
