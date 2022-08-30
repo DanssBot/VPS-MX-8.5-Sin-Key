@@ -350,7 +350,7 @@ echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[97mMOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
+echo 'echo -e "\t\033[97mMOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu " |lolcat' >>.bashrc
 echo 'echo -e "\033[1;43m TECLEE, MENU PARA VER EL PANEL\033[0m."' >>.bashrc
   echo 'echo ""' >>.bashrc
   clear && clear
