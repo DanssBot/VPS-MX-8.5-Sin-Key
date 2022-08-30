@@ -176,10 +176,10 @@ read -p "DIGITE LA CLAVE DE INSTALACION: " key
                echo -e "[*] INTENTANDO CONEXIÓN CON EL SERVIDOR 🖥️!"
                 sleep 2
                 echo $key > /bin/chave_inst
-                echo -e "[✅] CONEXIÓN EXITOSA"
+                echo -e "[*] CONEXIÓN EXITOSA"
                 sleep 2
             else
-            echo "[-] 🚫 LA CONEXIÓN NO FUE POSIBLE ❌!"
+            echo "[-]LA CONEXIÓN NO FUE POSIBLE!"
             sleep 3
             clear
             cat /dev/null > ~/.bash_history && history -c
