@@ -259,8 +259,6 @@ done
 clear && clear
 msg -bar2
 echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT DANSMX 🖥️  ◄◄ <<=====   \033[1;37m"
-msg -bar2
-print_center -azu "=====>>>> ADMRufu <<<<====="|lolcat
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
