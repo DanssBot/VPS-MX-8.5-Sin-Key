@@ -202,8 +202,6 @@ cd
 [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
 [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
 msg -ama "               Finalizando Instalacion" && msg bar2
- clear 
- clear 
  msg -bar 
  msg -ama " Notify-BOT (Notificasion Remota)|@LaCasitaMx_Noty_Bot " 
  msg -bar 
@@ -240,7 +238,7 @@ msg -ama "               Finalizando Instalacion" && msg bar2
  echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA " 
  } 
 
-
+done
 touch /usr/share/lognull &>/dev/null
 wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
 chmod +x /bin/resetsshdrop
