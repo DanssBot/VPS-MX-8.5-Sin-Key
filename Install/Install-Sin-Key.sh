@@ -163,6 +163,7 @@ echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  SCRIPT | DANSMX  🖥️  
   echo -e "\033[97m    # apt-get install apache2......... $ESTATUS "
 
 }
+
 clear && clear
   msg -bar
   echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
@@ -170,119 +171,36 @@ clear && clear
   echo -e "$slogan"
   msg -bar
   clear && clear
-install_paketes
-mkdir /etc/VPS-MX >/dev/null 2>&1
+  mkdir /etc/ADMRufu >/dev/null 2>&1
+  cd /etc
+  wget https://raw.githubusercontent.com/heshan3031/Multi-Script/main/R9/ADMRufu.tar.xz >/dev/null 2>&1
+  tar -xf ADMRufu.tar.xz >/dev/null 2>&1
+  chmod +x ADMRufu.tar.xz >/dev/null 2>&1
+  rm -rf ADMRufu.tar.xz
+  cd
+  chmod -R 755 /etc/ADMRufu
+  ADMRufu="/etc/ADMRufu" && [[ ! -d ${ADMRufu} ]] && mkdir ${ADMRufu}
+  ADM_inst="${ADMRufu}/install" && [[ ! -d ${ADM_inst} ]] && mkdir ${ADM_inst}
+  SCPinstal="$HOME/install"
+  rm -rf /usr/bin/menu
+  rm -rf /usr/bin/adm
+  rm -rf /usr/bin/ADMRufu
+  echo "$slogan" >/etc/ADMRufu/tmp/message.txt
+  echo "${ADMRufu}/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "${ADMRufu}/menu" >/usr/bin/adm && chmod +x /usr/bin/adm
+  echo "${ADMRufu}/menu" >/usr/bin/ADMRufu && chmod +x /usr/bin/ADMRufu
+  [[ -z $(echo $PATH | grep "/usr/games") ]] && echo 'if [[ $(echo $PATH|grep "/usr/games") = "" ]]; then PATH=$PATH:/usr/games; fi' >>/etc/bash.bashrc
+  echo '[[ $UID = 0 ]] && screen -dmS up /etc/ADMRufu/chekup.sh' >>/etc/bash.bashrc
+  echo 'v=$(cat /etc/ADMRufu/vercion)' >>/etc/bash.bashrc
+  echo '[[ -e /etc/ADMRufu/new_vercion ]] && up=$(cat /etc/ADMRufu/new_vercion) || up=$v' >>/etc/bash.bashrc
+  echo -e "[[ \$(date '+%s' -d \$up) -gt \$(date '+%s' -d \$(cat /etc/ADMRufu/vercion)) ]] && v2=\"Nueva Vercion disponible: \$v >>> \$up\" || v2=\"Script Vercion: \$v\"" >>/etc/bash.bashrc
+  echo '[[ -e "/etc/ADMRufu/tmp/message.txt" ]] && mess1="$(less /etc/ADMRufu/tmp/message.txt)"' >>/etc/bash.bashrc
+  echo '[[ -z "$mess1" ]] && mess1="@Rufu99"' >>/etc/bash.bashrc
+  echo 'clear && echo -e "\n$(figlet -f big.flf "  DANSMX")\n        RESELLER : $mess1 \n\n   Para iniciar DANSMX escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
 
-cd /etc/VPS-MX
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
-tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-rm -rf VPS-MX.tar.xz
-cd
-chmod -R 755 /etc/VPS-MX
-rm -rf /etc/VPS-MX/MEUIPvps
-echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-[[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
-[[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-[[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-[[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
-[[ ! -d /usr/share ]] && mkdir /usr/share
-[[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
-[[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
-[[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
-[[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-[[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-[[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
-[[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
-[[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
-cd
-[[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
-[[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
-[[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
-[[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
-msg -ama "               Finalizando Instalacion" && msg bar2
-
-NOTIFY () { 
- clear 
- clear 
- msg -bar 
- msg -ama " Notify-BOT (Notificasion Remota)|@LaCasitaMx_Noty_Bot " 
- msg -bar 
- echo -e "\033[1;94m Notify-BOT es un simple notificador de:" 
- echo -e "\033[1;94m >> Usuario Expirado" 
- echo -e "\033[1;94m >> Usuario Eliminado" 
- echo -e "\033[1;94m >> Avisos de VPS Reiniciada" 
- echo -e "\033[1;94m >> Avisos de Monitor de Protocolos" 
- echo -e "\033[1;97m Inicie El BOT de Telegram" 
- echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @conectedmx_bot" 
- echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564   " 
- msg -bar 
- echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr 
- echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log 
- echo -e "\033[1;93mIgrese su ID 👤:\033[0;37m"; read -p " " idbot 
- echo "${idbot}" > /etc/VPS-MX/controlador/IDT.log 
- msg -bar 
- echo -e "\033[1;32m              ID AGREGADO CON EXITO" 
- msg -bar 
- wget -qO- ifconfig.me > /etc/VPS-MX/IP.log 
- ipt=`less /etc/VPS-MX/IP.log` > /dev/null 2>&1 
- Nip="$(echo $ipt)" 
- NOM="$(less /etc/VPS-MX/controlador/nombre.log)" 
- NOM1="$(echo $NOM)" 
- IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1 
- IDB2=`echo $IDB1` > /dev/null 2>&1 
- KEY="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w" 
- URL="https://api.telegram.org/bot$KEY/sendMessage" 
- MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠ 
- 👉 ►► IP: $Nip 
- 👉 ►► MENSAJE DE PRUEBA 
- 🔰 ►► NOTI-BOT ACTIVADO CORRECTAMENTE" 
- curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null 
- echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA " 
- } 
-
-touch /usr/share/lognull &>/dev/null
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
-chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
-grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
-rm -rf /usr/local/lib/systemubu1 &>/dev/null
-rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
-echo "$v1" > /etc/versin_script
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
-echo '#!/bin/sh -e' >/etc/rc.local
-sudo chmod +x /etc/rc.local
-echo "sudo resetsshdrop" >>/etc/rc.local
-echo "sleep 2s" >>/etc/rc.local
-echo "exit 0" >>/etc/rc.local
-/bin/cp /etc/skel/.bashrc ~/
-echo 'clear && clear' >>.bashrc
-echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'figlet -w 85 -f smslant "         SCRIPT
-     DANSMX"   | lolcat' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
-echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[97mMOSTRAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
-echo 'echo ""' >>.bashrc
-echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo VPSMX o menu            \033[0;37m" && msg -bar2
-echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)" 
- echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @LaCasitaMx_Noty_Bot)" 
- msg -bar2 
- read -p " [ s | n ]: " NOTIFY 
- [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY 
- msg -bar2 
-   [[ ${byinst} = "true" ]] && install_fim
-rm -rf /usr/bin/pytransform &>/dev/null
-rm -rf VPS-MX.sh
-rm -rf lista-arq
-service ssh restart &>/dev/null
+  update-locale LANG=en_US.UTF-8 LANGUAGE=en
+  clear && clear
+  msg -bar
+  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
+  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
