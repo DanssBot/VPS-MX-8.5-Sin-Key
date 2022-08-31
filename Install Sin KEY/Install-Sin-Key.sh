@@ -202,6 +202,45 @@ cd
 [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
 [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
 msg -ama "               Finalizando Instalacion" && msg bar2
+ clear 
+ clear 
+ msg -bar 
+ msg -ama " Notify-BOT (Notificasion Remota)|@LaCasitaMx_Noty_Bot " 
+ msg -bar 
+ echo -e "\033[1;94m Notify-BOT es un simple notificador de:" 
+ echo -e "\033[1;94m >> Usuario Expirado" 
+ echo -e "\033[1;94m >> Usuario Eliminado" 
+ echo -e "\033[1;94m >> Avisos de VPS Reiniciada" 
+ echo -e "\033[1;94m >> Avisos de Monitor de Protocolos" 
+ echo -e "\033[1;97m Inicie El BOT de Telegram" 
+ echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @conectedmx_bot" 
+ echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564   " 
+ msg -bar 
+ echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr 
+ echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log 
+ echo -e "\033[1;93mIgrese su ID 👤:\033[0;37m"; read -p " " idbot 
+ echo "${idbot}" > /etc/VPS-MX/controlador/IDT.log 
+ msg -bar 
+ echo -e "\033[1;32m              ID AGREGADO CON EXITO" 
+ msg -bar 
+ wget -qO- ifconfig.me > /etc/VPS-MX/IP.log 
+ ipt=`less /etc/VPS-MX/IP.log` > /dev/null 2>&1 
+ Nip="$(echo $ipt)" 
+ NOM="$(less /etc/VPS-MX/controlador/nombre.log)" 
+ NOM1="$(echo $NOM)" 
+ IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1 
+ IDB2=`echo $IDB1` > /dev/null 2>&1 
+ KEY="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w" 
+ URL="https://api.telegram.org/bot$KEY/sendMessage" 
+ MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠ 
+ 👉 ►► IP: $Nip 
+ 👉 ►► MENSAJE DE PRUEBA 
+ 🔰 ►► NOTI-BOT ACTIVADO CORRECTAMENTE" 
+ curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null 
+ echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA " 
+ } 
+
+
 touch /usr/share/lognull &>/dev/null
 wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
 chmod +x /bin/resetsshdrop
@@ -235,6 +274,12 @@ echo 'echo -e "\t\033[97mMOSTRAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bas
 echo 'echo ""' >>.bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;41m               sudo VPSMX o menu            \033[0;37m" && msg -bar2
+echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)" 
+ echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @LaCasitaMx_Noty_Bot)" 
+ msg -bar2 
+ read -p " [ s | n ]: " NOTIFY 
+ [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY 
+ msg -bar2 
 rm -rf /usr/bin/pytransform &>/dev/null
 rm -rf VPS-MX.sh
 rm -rf lista-arq
