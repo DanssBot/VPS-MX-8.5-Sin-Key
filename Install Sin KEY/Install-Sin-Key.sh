@@ -325,8 +325,13 @@ echo 'echo -e "\033[1;93m══════════════════�
 echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
+echo 'echo -e "\033[92m        VERSION : $ver "'>> .bashrc
 echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
+echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
+echo 'echo -e ""' >> .bashrc
 echo 'echo -e "\t\033[97mMOSTRAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
