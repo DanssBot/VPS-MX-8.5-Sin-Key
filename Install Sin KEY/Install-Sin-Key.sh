@@ -98,92 +98,7 @@ done
 echo -e " $full_in $full_en"
 sleep 0.1s
 }
-  updater () {
-
- if [ ! -d "$INSTALL_DIR" ]; then
-	mkdir -p "$INSTALL_DIR_PARENT"
-	cd "$INSTALL_DIR_PARENT"
-    wget https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/zzupdater/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
-más
-	echo ""
-fi
- 
- }
-####------- REINICIAR UPDATER Y RECONFIGURAR HORARIO
-
-msg -bar2
-echo -e  " \e[97m\033[1;41m =====>>►► 🐲 SCRIPT - VPS•MX ®️ 🐲 ◄◄<<===== \033[1;37m" 
-msg -bar2
-msg -ama  " PREPARANDO INSTALACION" 
-msg -bar2
-## Nombre del script
-SCRIPT_NAME=vpsmxup
-## Directorio de instalación
-WORKING_DIR_ORIGINAL="$(pwd)" 
-INSTALL_DIR_PARENT="/usr/local/vpsmxup/" 
-INSTALL_DIR=${INSTALL_DIR_PARENT}${SCRIPT_NAME}/
-mkdir -p  "/etc/vpsmxup/"  &> /dev/null
-## ------ AUTO ACTULIZADOR
-
-if [ ! -d "$INSTALL_DIR" ]; then
-	mkdir -p "$INSTALL_DIR_PARENT"
-	cd "$INSTALL_DIR_PARENT" 
-    wget https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/zzupdater/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
-else
-	echo ""
-fi
-
-echo ""
-echo -e "\033[97m    ◽️ INTENTANDO DETENER UPDATER SECUNDARIO " 
-fun_bar " killall apt apt-get > /dev/null 2>&1 "
-echo -e "\033[97m    ◽️ INTENTANDO RECONFIGURAR UPDATER "
-fun_bar " dpkg --configure -a > /dev/null 2>&1 "
-echo -e "\033[97m    ◽️ INSTALANDO S-P-C "
-fun_bar " apt-get install software-properties-common -y > /dev/null 2>&1"
-echo -e "\033[97m    ◽️ INSTALANDO LIBRERIA UNIVERSAL "
-fun_bar " sudo apt-add-repository universe -y > /dev/null 2>&1"
-echo -e "\033[97m    ◽️ INSTALANDO PYTHON "
-fun_bar " sudo apt-get install python -y > /dev/null 2>&1"
-apt-get install python -y &>/dev/null
-echo -e "\033[97m    ◽️ INSTALANDO NET-TOOLS "
-fun_bar "apt-get install net-tools -y > /dev/null 2>&1"
-apt-get install net-tools -y &>/dev/null
-apt-get install curl -y > /dev/null 2>&1
-service ssh restart > /dev/null 2>&1
-echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
-sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
-fun_bar "service ssh restart > /dev/null 2>&1 "
-msg -bar2
-echo -e "${cor[2]} VERIFICAR POSIBLE ACTUALIZACION DE S.O (Default n)"
-echo -e "\033[1;34m     (Este proceso puede demorar mucho Tiempo)"
-msg -bar2
-read -p "   [ s | n ]: " -e -i n updater   
-[[ "$updater" = "s" || "$updater" = "S" ]] && updater
-msg -bar2
-echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
-msg -bar
-echo -e "\033[1;96m DIGITE NUEVA CONTRASEÑA:\033[0;37m"; read -p " " pass
-(echo $pass; echo $pass)|passwd root 2>/dev/null
-sleep 1s
-msg -bar
-echo -e "\033[97m      CONTRASEÑA AGREGADA O EDITADA CORECTAMENTE"
-echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
-
-## VERIFICAR KEY AUTENTICA VS IP BOT
-cd /usr/bin/
-rm -rf pytransform.tar > /dev/null 2>&1
-rm -rf pytransform > /dev/null 2>&1
-wget https://www.dropbox.com/s/ud0ti1pxbmuxrrf/pytransform.tar >/dev/null 2>&1
-tar -xf pytransform.tar > /dev/null 2>&1 
-rm -rf pytransform.tar > /dev/null 2>&1
-
-msg -bar2
-## VPS-MX
-msg -bar2
-read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
-## Restore working directory
-
-cd $WORKING_DIR_ORIGINAL
+  
 
 install_paketes() {
   clear && clear
@@ -438,8 +353,6 @@ echo 'echo "" ' >>.bashrc
 echo 'echo -e "\033[92m        VERSION : $ver "'>> .bashrc
 echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
 echo 'echo "" ' >>.bashrc
-echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
-echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
 echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 echo 'echo -e "\t\033[97mMOSTRAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
