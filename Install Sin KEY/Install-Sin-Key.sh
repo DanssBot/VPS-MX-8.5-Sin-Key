@@ -185,25 +185,6 @@ read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
 
 cd $WORKING_DIR_ORIGINAL
 
-fun_ip
-
-
-msg -bar
-clear
-msg -verm  " ESPERE UN MOMENTO, INICIANDO... " 
-msg -bar
-dpkg --configure -a &>/dev/null
-apt-get install software-properties-common -y &>/dev/null
-apt-add-repository universe -y &>/dev/null
-myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
-mkdir -p /etc/VPS-MX &>/dev/null
-rm -rf /etc/localtime &>/dev/null
-ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
-rm $(pwd)/$0 &> /dev/null
-rm -rf /usr/local/lib/systemubu1 &> /dev/null
-
-
 install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
