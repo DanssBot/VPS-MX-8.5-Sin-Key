@@ -305,13 +305,11 @@ NOTIFY () {
  MSG="👇= KEY INSTALADO =👇 
  ╔═════ ▓▓ ࿇ ▓▓ ═════╗ 
  - - - - - - - ×∆× - - - - - - - 
- User ID: $(cat ${userid}) 
+ Usuario ONWER: DANSNX
  - - - - - - - ×∆× - - - - - - - 
- Usuario: $(cat ${SCPdir}/message.txt) 
+ IP: $Nip
  - - - - - - - ×∆× - - - - - - - 
- IP: $(cat ${SCPdir}/IP.log) 
- - - - - - - - ×∆× - - - - - - - 
- KEY: $Key 
+ KEY: 
  - - - - - - - ×∆× - - - - - - - 
  By @DANSMX0 
  - - - - - - - ×∆× - - - - - - - 
