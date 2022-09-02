@@ -99,6 +99,30 @@ echo -e " $full_in $full_en"
 sleep 0.1s
 }
 
+echo ""
+echo -e "\033[97m    ◽️ INTENTANDO DETENER UPDATER SECUNDARIO " 
+fun_bar " killall apt apt-get > /dev/null 2>&1 "
+echo -e "\033[97m    ◽️ INTENTANDO RECONFIGURAR UPDATER "
+fun_bar " dpkg --configure -a > /dev/null 2>&1 "
+echo -e "\033[97m    ◽️ INSTALANDO S-P-C "
+fun_bar " apt-get install software-properties-common -y > /dev/null 2>&1"
+echo -e "\033[97m    ◽️ INSTALANDO LIBRERIA UNIVERSAL "
+fun_bar " sudo apt-add-repository universe -y > /dev/null 2>&1"
+echo -e "\033[97m    ◽️ INSTALANDO PYTHON "
+fun_bar " sudo apt-get install python -y > /dev/null 2>&1"
+apt-get install python -y &>/dev/null
+echo -e "\033[97m    ◽️ INSTALANDO NET-TOOLS "
+fun_bar "apt-get install net-tools -y > /dev/null 2>&1"
+apt-get install net-tools -y &>/dev/null
+apt-get install curl -y > /dev/null 2>&1
+service ssh restart > /dev/null 2>&1
+echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
+sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
+fun_bar "service ssh restart > /dev/null 2>&1 "
+msg -bar2
+
+
+clear
 install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
