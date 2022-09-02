@@ -98,6 +98,7 @@ done
 echo -e " $full_in $full_en"
 sleep 0.1s
 }
+  updater () {
 
  if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
