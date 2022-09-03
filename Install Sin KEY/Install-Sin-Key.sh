@@ -392,38 +392,17 @@ NOTIFY () {
  NOM1="$(echo $NOM)" 
  IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1 
  IDB2=`echo $IDB1` > /dev/null 2>&1 
- KEY="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w" 
+ KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc" 
  URL="https://api.telegram.org/bot$KEY/sendMessage" 
  MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠ 
  👉 ►► IP: $Nip 
- 👉 ►► MENSAJE DE PRUEBA 
+ 👉 ►► MENSAJE DE PRUEBA EXITOSO 
  🔰 ►► NOTI-BOT ACTIVADO CORRECTAMENTE" 
+ ✅ == SLOGAN: $mess1
  curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null 
  echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA " 
  } 
 
- wget -qO- ifconfig.me > /etc/VPS-MX/IP.log 
- userid="${SCPdir}/ID" 
- TOKEN="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc" 
- URL="https://api.telegram.org/bot$TOKEN/sendMessage" 
- MSG="👇= KEY INSTALADO =👇 
- ╔═════ ▓▓ ࿇ ▓▓ ═════╗ 
- - - - - - - - ×∆× - - - - - - - 
- Usuario ONWER: DANSNX
- - - - - - - - ×∆× - - - - - - - 
- IP: $Nip
- - - - - - - - ×∆× - - - - - - - 
- KEY: 
- - - - - - - - ×∆× - - - - - - - 
- By @DANSMX0 
- - - - - - - - ×∆× - - - - - - - 
- ╚═════ ▓▓ ࿇ ▓▓ ═════╝ 
- " 
- activ=$(cat ${userid}) 
- curl -s --max-time 10 -d "chat_id=$activ&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null 
- curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null 
- rm ${SCPdir}/IP.log &>/dev/null 
- msg -bar2
 
 touch /usr/share/lognull &>/dev/null
 wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
