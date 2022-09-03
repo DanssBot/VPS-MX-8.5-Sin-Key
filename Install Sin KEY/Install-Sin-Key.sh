@@ -226,6 +226,7 @@ clear && clear
   echo -e "$slogan"
   msg -bar
   clear && clear
+install_paketes
 mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
