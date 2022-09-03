@@ -112,9 +112,9 @@ fi
 ####------- REINICIAR UPDATER Y RECONFIGURAR HORARIO
 
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT | DANS 🖥️  ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m  =====>> ►►  🖥️ SCRIPT | DANS 🖥️  ◄◄ <<=====  \033[1;37m"
 msg -bar2
-echo -e " \e[5m\033[1;100m   PREPARANDO INSTALACIÓN    \033[1;37m"
+echo -e " \e[5m\033[1;100m   ESTAMOS PREPARANDO LA INSTALACIÓN    \033[1;37m"
 msg -bar2
 ## Nombre del script
 SCRIPT_NAME=vpsmxup
