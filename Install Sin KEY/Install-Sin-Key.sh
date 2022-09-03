@@ -112,9 +112,9 @@ fi
 ####------- REINICIAR UPDATER Y RECONFIGURAR HORARIO
 
 msg -bar2
-echo -e  " \e[97m\033[1;41m =====>>►► 🐲 SCRIPT - VPS•MX ®️ 🐲 ◄◄<<===== \033[1;37m" 
+echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  SCRIPT | DANS  🖥️  ◄◄ <<=====   \033[1;37m"
 msg -bar2
-msg -ama  " PREPARANDO INSTALACION" 
+echo -e " \e[5m\033[1;100m   PREPARANDO INSTALACIÓN    \033[1;37m"
 msg -bar2
 ## Nombre del script
 SCRIPT_NAME=vpsmxup
@@ -207,10 +207,10 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  SCRIPT | DANSMX  🖥️  ◄◄ <<=====   \033[1;37m"
+  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  ACTUALIZANDO...  🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
   echo -e "\033[97m"
-  echo -e "  \033[41m    =====>>>> INSTALANDO <<<<=====    \e[49m"
+  echo -e " \e[5m\033[1;100m   =====>> ►►  🔰  PAQUETES.....  🔰  ◄◄ <<=====   \033[1;37m"
   echo -e "\033[97m"
   msg -bar
   #grep
