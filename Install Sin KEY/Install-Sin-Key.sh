@@ -207,7 +207,7 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️  ACTUALIZANDO...  🖥️  ◄◄ <<=====   \033[1;37m"
+  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ ACTUALIZANDO... 🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
   echo -e "\033[97m"
   echo -e " \e[5m\033[1;100m   =====>> ►►  🔰  PAQUETES.....  🔰  ◄◄ <<=====   \033[1;37m"
