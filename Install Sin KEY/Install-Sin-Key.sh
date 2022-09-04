@@ -203,6 +203,74 @@ ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 rm $(pwd)/$0 &> /dev/null
 rm -rf /usr/local/lib/systemubu1 &> /dev/null
 
+print_center() {
+  if [[ -z $2 ]]; then
+    text="$1"
+  else
+    col="$1"
+    text="$2"
+  fi
+
+  while read line; do
+    unset space
+    x=$(((54 - ${#line}) / 2))
+    for ((i = 0; i < $x; i++)); do
+      space+=' '
+    done
+    space+="$line"
+    if [[ -z $2 ]]; then
+      msg -azu "$space"
+    else
+      msg "$col" "$space"
+    fi
+  done <<<$(echo -e "$text")
+}
+
+title() {
+  clear
+  msg -bar
+  if [[ -z $2 ]]; then
+    print_center -azu "$1"
+  else
+    print_center "$1" "$2"
+  fi
+  msg -bar
+}
+
+stop_install() {
+  title "INSTALACION CANCELADA"
+  exit
+}
+
+time_reboot() {
+  print_center -ama "REINICIANDO VPS EN $1 SEGUNDOS"
+  REBOOT_TIMEOUT="$1"
+
+  while [ $REBOOT_TIMEOUT -gt 0 ]; do
+    print_center -ne "-$REBOOT_TIMEOUT-\r"
+    sleep 1
+    : $((REBOOT_TIMEOUT--))
+  done
+  reboot
+}
+
+os_system() {
+  system=$(cat -n /etc/issue | grep 1 | cut -d ' ' -f6,7,8 | sed 's/1//' | sed 's/      //')
+  distro=$(echo "$system" | awk '{print $1}')
+
+  case $distro in
+  Debian) vercion=$(echo $system | awk '{print $3}' | cut -d '.' -f1) ;;
+  Ubuntu) vercion=$(echo $system | awk '{print $2}' | cut -d '.' -f1,2) ;;
+  esac
+}
+
+repo() {
+  link="https://raw.githubusercontent.com/NearVPS/Multi-Script/main/Source-List/$1.list"
+  case $1 in
+  8 | 9 | 10 | 11 | 16.04 | 18.04 | 20.04 | 20.10 | 21.04 | 21.10 | 22.04) wget -O /etc/apt/sources.list ${link} &>/dev/null ;;
+  esac
+}
+
 
 install_paketes() {
   soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip openssl screen cron iptables lsof pv boxes nano at mlocate gawk grep bc jq curl npm nodejs socat netcat netcat-traditional net-tools cowsay figlet lolcat apache2"
@@ -235,6 +303,72 @@ install_paketes() {
     fi
   done
 }
+post_reboot() {
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NearVPS/VPS-MX_Oficial/master/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  title -verd "ACTULIZACION DE SISTEMA COMPLETA"
+  print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
+  msg -bar
+}
+
+install_start() {
+  msg -bar
+
+  echo -e "\e[1;97m           \e[5m\033[1;100m   ACTULIZACION DE SISTEMA   \033[1;37m"
+  msg -bar
+  print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
+  msg -bar3
+  msg -ne "\n Desea continuar? [S/N]: "
+  read opcion
+  [[ "$opcion" != @(s|S) ]] && stop_install
+  clear && clear
+  msg -bar
+  echo -e "\e[1;97m           \e[5m\033[1;100m   ACTULIZACION DE SISTEMA   \033[1;37m"
+  msg -bar
+  os_system
+  repo "${vercion}"
+  apt update -y
+  apt upgrade -y
+}
+
+install_continue() {
+  os_system
+  msg -bar
+  echo -e "      \e[5m\033[1;100m   COMPLETANDO PAQUETES PARA EL SCRIPT   \033[1;37m"
+  msg -bar
+  print_center -ama "$distro $vercion"
+  print_center -verd "INSTALANDO DEPENDENCIAS"
+  msg -bar3
+  dependencias
+  msg -bar3
+  sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf >/dev/null 2>&1
+  service apache2 restart >/dev/null 2>&1
+  print_center -azu "Removiendo paquetes obsoletos"
+  apt autoremove -y &>/dev/null
+  sleep 2
+  tput cuu1 && tput dl1
+  msg -bar
+  print_center -ama "Si algunas de las dependencias fallo!!!\nal terminar, puede intentar instalar\nla misma manualmente usando el siguiente comando\napt install nom_del_paquete"
+  msg -bar
+  read -t 60 -n 1 -rsp $'\033[1;39m       << Presiona enter para Continuar >>\n'
+}
+
+while :; do
+  case $1 in
+  -s | --start) install_start && post_reboot && time_reboot "15" ;;
+  -c | --continue)
+    #rm /root/Install-Sin-Key.sh &>/dev/null
+    sed -i '/Instalador/d' /root/.bashrc
+    install_continue
+    break
+    ;;
+  # -u | --update)
+  #   install_start
+  #   install_continue
+  #   break
+  # ;;
+  *) exit ;;
+  esac
+done
 
 clear && clear
   msg -bar
