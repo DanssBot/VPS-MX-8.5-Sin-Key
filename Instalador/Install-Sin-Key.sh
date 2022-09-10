@@ -153,44 +153,12 @@ dependencias() {
     fi
   done
 }
-#KEY DE VERIFICACION
-apt install curl -y
-echo "America/Sao_Paulo" > /etc/timezone
-ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
-dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
-apt install figlet -y
-clear
-msg -bar
-echo -e " \e[5m\033[1;100m   ====>> ►► 🔰 INSTALANDO DANSMX 🔰 ◄◄ <<====   \033[1;37m"
-msg -bar
-echo ""
-echo -e "DANSMX" | figlet
-echo -e "                              \033[1;31mBy DANSBOT\033[1;36m"
-echo ""
-chave=$(curl -sSL "https://raw.githubusercontent.com/heshan3031/VPSbot/main/chave") &>/dev/null
 
-read -p "DIGITE LA CLAVE DE INSTALACION: " key
-    
-         if [[ "$key" = "$chave" ]]
-          then
-               echo -e "[*] INTENTANDO CONEXIÓN CON EL SERVIDOR 🖥️!"
-                sleep 2
-                echo $key > /bin/chave_inst
-                echo -e "[*] CONEXIÓN EXITOSA"
-                sleep 2
-            else
-            echo "[-]LA CONEXIÓN NO FUE POSIBLE!"
-            sleep 3
-            clear
-            cat /dev/null > ~/.bash_history && history -c
-            rm /bin/ubuinst* > /dev/null 2>&1
-            exit;
-          fi
 clear
 msg -bar
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTULIZACION DE SISTEMA COMPLETA"
   print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
   msg -bar
@@ -264,271 +232,12 @@ msg -bar
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
 #NEAR 8.5 MOD
-install_near() {
-  clear && clear
-  msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
-  tput cuu1 && tput dl1
-  echo -e "$slogan"
-  msg -bar
-  clear && clear
-  mkdir /etc/VPS-MX >/dev/null 2>&1
 
-cd /etc/VPS-MX
-wget https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
-tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-rm -rf VPS-MX.tar.xz
-cd
-chmod -R 755 /etc/VPS-MX
-rm -rf /etc/VPS-MX/MEUIPvps
-echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-echo "$slogan" >/etc/VPS-MX/message.txt
-[[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
-[[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-[[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-[[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
-[[ ! -d /usr/share ]] && mkdir /usr/share
-[[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
-[[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
-[[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
-[[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-[[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-[[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
-[[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
-[[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
-rm -rf /etc/VPS-MX/herramientas/speed.sh
-rm -rf /etc/VPS-MX/herramientas/speedtest.py
-cd /etc/VPS-MX/herramientas
-wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
-tar -xf speedtest_v1.tar >/dev/null 2>&1
-rm -rf speedtest_v1.tar >/dev/null 2>&1
-cd
-[[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
-[[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
-[[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
-[[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
-msg -ama "               Finalizando Instalacion" && msg bar2
-[[ $(find /etc/VPS-MX/controlador -name nombre.log | grep -w "nombre.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log | grep -w "IDT.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log | grep -w "tiemlim.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/tiemlim.log &>/dev/null
-touch /usr/share/lognull &>/dev/null
-wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SR/SPR -O /usr/bin/SPR &>/dev/null &>/dev/null
-chmod 775 /usr/bin/SPR &>/dev/null
-wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/dz1onkls1685hc2/soporte &>/dev/null
-chmod 775 /usr/bin/SOPORTE &>/dev/null
-SOPORTE &>/dev/null
-wget -O /bin/rebootnb https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/rebootnb &>/dev/null
-chmod +x /bin/rebootnb
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Utilidad/resetsshdrop &>/dev/null
-chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
-grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
-v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion") 
-echo "$v1" > /etc/versin_script 
-msg -bar2
-echo '#!/bin/sh -e' >/etc/rc.local
-sudo chmod +x /etc/rc.local
-echo "sudo rebootnb" >>/etc/rc.local
-echo "sudo resetsshdrop" >>/etc/rc.local
-echo "sleep 2s" >>/etc/rc.local
-echo "exit 0" >>/etc/rc.local
-/bin/cp /etc/skel/.bashrc ~/
-echo 'clear && clear' >>.bashrc
-echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'figlet -w 85 -f smslant "         SCRIPT
-     DANSMX"   | lolcat' >>.bashrc
-echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
-echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
-echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[92m -->>SLOGAN 🇲🇽: $mess1 "' >>.bashrc
-echo 'echo "" ' >>.bashrc
-echo 'echo -e "\t\033[97mMOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu " |lolcat' >>.bashrc
-echo 'echo -e "\033[1;43m TECLEE, MENU PARA VER EL PANEL\033[0m."' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  clear && clear
-  msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-  rm -rf /usr/bin/pytransform &>/dev/null
-rm -rf VPS-MX.sh
-rm -rf lista-arq
-service ssh restart &>/dev/null
-}
-#VPS-MX 8.5 OFICIAL
-install_oficial() {
-  clear && clear
-  msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
-  tput cuu1 && tput dl1
-  echo -e "$slogan"
-  msg -bar
-  clear && clear
-  mkdir /etc/VPS-MX >/dev/null 2>&1
-  cd /etc
-  wget https://raw.githubusercontent.com/NearVPS/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/VPS-MX.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-  chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-  rm -rf VPS-MX.tar.xz
-  cd
-  chmod -R 755 /etc/VPS-MX
-  rm -rf /etc/VPS-MX/MEUIPvps
-  echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-  echo "$slogan" >/etc/VPS-MX/message.txt
-  [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
-  [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
-  [[ ! -d /usr/share ]] && mkdir /usr/share
-  [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
-  [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
-  [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
-  [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-  [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
-  [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
-  [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
-  cd
-  [[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
-  [[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
-  [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
-  [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
-  touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
-  chmod +x /bin/resetsshdrop
-  grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-  echo "PasswordAuthentication yes" -e "\e[1;92m             >> INSTALACION COMPLETADA <<" >>/etc/ssh/sshd_configecho && msg bar2
-  rm -rf /usr/local/lib/systemubu1 &>/dev/null
-  rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.4g%20Oficial/Version")
-  echo "$v1" >/etc/versin_script
-  wget -O /etc/versin_script_new https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/Version &>/dev/null
-  echo '#!/bin/sh -e' >/etc/rc.local
-  sudo chmod +x /etc/rc.local
-  echo "sudo resetsshdrop" >>/etc/rc.local
-  echo "sleep 2s" >>/etc/rc.local
-  echo "exit 0" >>/etc/rc.local
-  echo 'clear' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.4g%20Oficial/Version &>/dev/null' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
-  echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf VPS-MX.sh
-  rm -rf lista-arq
-  service ssh restart &>/dev/null
-  clear && clear
-  msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-
-}
-#VPS-MX 8.6 MOD
-install_mod() {
-  clear && clear
-  msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
-  tput cuu1 && tput dl1
-  echo -e "$slogan"
-  msg -bar
-  clear && clear
-  mkdir /etc/VPS-MX >/dev/null 2>&1
-  cd /etc
-  wget https://www.dropbox.com/s/a9ly2nulltoakmg/VPS-MX.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-  chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-  rm -rf VPS-MX.tar.xz
-  cd
-  chmod -R 755 /etc/VPS-MX
-  rm -rf /etc/VPS-MX/MEUIPvps
-  echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-  echo "$slogan" >/etc/VPS-MX/message.txt
-  [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
-  [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
-  [[ ! -d /usr/share ]] && mkdir /usr/share
-  [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
-  [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
-  [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
-  [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-  [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
-  [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
-  [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
-  cd
-  [[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
-  [[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
-  [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
-  [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
-  touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
-  chmod +x /bin/resetsshdrop
-  grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-  echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
-  rm -rf /usr/local/lib/systemubu1 &>/dev/null
-  rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/Version")
-  echo "$v1" >/etc/versin_script
-  wget -O /etc/versin_script_new https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/Version &>/dev/null
-  echo '#!/bin/sh -e' >/etc/rc.local
-  sudo chmod +x /etc/rc.local
-  echo "sudo resetsshdrop" >>/etc/rc.local
-  echo "sleep 2s" >>/etc/rc.local
-  echo "exit 0" >>/etc/rc.local
-  echo 'clear' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/Version &>/dev/null' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
-  echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
-  echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
-  echo 'echo ""' >>.bashrc
-  rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf VPS-MX.sh
-  rm -rf lista-arq
-  service ssh restart &>/dev/null
-  clear && clear
-  msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-}
-#LATAM 11.g
-install_latam() {
-  echo "--PROX---"
-}
-#LATAM ADMRufu 31-03-2022
 install_ADMRufu() {
   clear && clear
+  msg -bar
+  msg -bar
+  figlet " SLOGAN" | lolcat 
   msg -bar
   echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
@@ -568,136 +277,19 @@ install_ADMRufu() {
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-}
-#CHUMOGH
-install_ChumoGH() {
-  clear && clear
-  msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
-  echo -ne "\033[1;97m Nombre del Servidor: \033[1;32m" && read name
-
-  msg -bar
-  clear && clear
-  mkdir /etc/adm-lite >/dev/null 2>&1
-  cd /etc
-  wget https://raw.githubusercontent.com/heshan3031/Multi-Script/main/ChuG/adm-lite.tar.xz >/dev/null 2>&1
-  tar -xf adm-lite.tar.xz >/dev/null 2>&1
-  chmod +x adm-lite.tar.xz >/dev/null 2>&1
-  rm -rf /etc/adm-lite.tar.xz
-  cd
-  chmod -R 755 /etc/adm-lite
-  /bin/cp /etc/skel/.bashrc ~/
-  rm -rf /etc/bash.bashrc >/dev/null 2>&1
-  echo "$slogan" >/etc/adm-lite/menu_credito
-  fecha=$(date +"%d-%m-%y")
-  dom='base64 -d'
-  SCPdir="/etc/adm-lite"
-  SCPinstal="$HOME/install"
-  SCPidioma="${SCPdir}"
-  SCPusr="${SCPdir}"
-  SCPfrm="${SCPdir}"
-  SCPinst="${SCPdir}"
-
-  cd /etc/adm-lite
-  echo "cd /etc/adm-lite && ./menu" >/bin/menu
-  echo "cd /etc/adm-lite && ./menu" >/bin/cgh
-  echo "cd /etc/adm-lite && ./menu" >/bin/adm
-  chmod +x /bin/menu
-  chmod +x /bin/cgh
-  chmod +x /bin/adm
-  cd $HOME
-  echo ""
-  rm -rf mkdir /bin/ejecutar >/dev/null
-  [[ -e /etc/adm-lite/menu_credito ]] && ress="$(cat </etc/adm-lite/menu_credito) " || ress="NULL ( no found ) "
-  chmod +x /etc/adm-lite/*
-  [[ -e ${SCPinstal}/v-local.log ]] && vv="$(cat <${SCPinstal}/v-local.log)" || vv="NULL"
-  #cd /etc/adm-lite && bash cabecalho --instalar
-  echo "verify" >$(echo -e $(echo 2f62696e2f766572696679737973 | sed 's/../\\x&/g;s/$/ /'))
-  fecha=$(date +"%d-%m-%y")
-
-  [[ -d /bin/ejecutar ]] && rm -rf /bin/ejecutar
-  [[ -e /etc/adm-lite/gerar.sh ]] && rm -f /etc/adm-lite/gerar.sh
-  mkdir /bin/ejecutar
-  echo $fecha >/bin/ejecutar/fecha
-  [[ -e /bin/ejecutar/menu_credito ]] && echo "" || echo "$(cat /etc/adm-lite/menu_credito)" >/bin/ejecutar/menu_credito && chmod +x /bin/ejecutar/menu_credito
-  wget -q -O /bin/toolmaster https://raw.githubusercontent.com/NetVPS/Multi-Script/main/ChuG/utilitarios/toolmaster
-  chmod +x /bin/toolmaster
-  echo 'source <(curl -sSL https://raw.githubusercontent.com/NetVPS/Multi-Script/main/ChuG/utilitarios/free-men.sh)' >/bin/ejecutar/echo-ram.sh
-  echo 'wget -q -O /bin/ejecutar/v-new.log https://raw.githubusercontent.com/NetVPS/Multi-Script/main/ChuG/utilitarios/v-new.log' >>/bin/ejecutar/echo-ram.sh && bash /bin/ejecutar/echo-ram.sh
-
-  echo "clear" >>/root/.bashrc
-  echo 'killall menu > /dev/null 2>&1' >>/root/.bashrc
-  sed '/ChumoGH/ d' /root/.bashrc >/root/.bashrc.cp
-  sed '/echo/ d' /root/.bashrc.cp >/root/.bashrc
-  sed '/ejecutar/ d' /root/.bashrc >/root/.bashrc.cp
-  sed '/date/ d' /root/.bashrc.cp >/root/.bashrc
-  rm -f /root/.bashrc.cp
-  echo 'DATE=$(date +"%d-%m-%y")' >>/root/.bashrc
-  echo 'TIME=$(date +"%T")' >>/root/.bashrc
-  echo 'figlet -k DANSMX | lolcat' >>/root/.bashrc
-  echo 'echo -e ""' >>/root/.bashrc
-  echo 'bash /bin/ejecutar/echo-ram.sh' >>/root/.bashrc
-  echo 'echo -e " Fecha de Instalacion : " $(cat < /bin/ejecutar/fecha)' >>/root/.bashrc
-  echo 'echo -e " Nombre del Servidor : $HOSTNAME"' >>/root/.bashrc
-  echo 'echo -e " Tiempo en Linea : $(uptime -p)"' >>/root/.bashrc
-  echo 'echo -e " Memoria Libre : $(cat < /bin/ejecutar/raml)"' >>/root/.bashrc
-  echo 'echo -e " Fecha del Servidor : $DATE"' >>/root/.bashrc
-  echo 'echo -e " Hora del Servidor : $TIME"' >>/root/.bashrc
-  echo 'echo -e ""' >>/root/.bashrc
-  echo 'echo -e " Bienvenido!"' >>.bashrc
-  echo 'echo -e "\033[1;43m Teclee cgh , menu o adm para ver el MENU\033[0m."' >>/root/.bashrc
-  echo 'echo -e ""' >>/root/.bashrc
-
-  [[ -z $name ]] && {
-    rm -f /root/name
-  } || {
-    echo $name >/etc/adm-lite/name
-    chmod +x /etc/adm-lite/name
-    echo $name >/root/name
-  }
-  opti=0
-  echo 0 >/bin/ejecutar/val
-  echo 0 >/bin/ejecutar/uskill
-  echo "desactivado" >/bin/ejecutar/val1
-  [[ -e /bin/ejecutar/menu_credito ]] && echo "" || echo "$(cat /etc/adm-lite/menu_credito)" >/bin/ejecutar/menu_credito && chmod +x /bin/ejecutar/menu_credito
-  echo "Verified【 $(cat /bin/ejecutar/menu_credito)" >/bin/ejecutar/exito
-  clear && clear
-  msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
+msg -ama "               Estamos Finalizando la Instalación" && msg bar2
 }
 
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR DANSBOT 8.7x MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 8.6x MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m5\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m6\e[1;93m]\033[1;31m > \033[1;97m INSTALAR LATAM 1.1g (Organizando ficheros) \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao
 case $opcao in
 1)
-  install_near
-  ;;
-2)
-  install_oficial
-  ;;
-3)
-  install_mod
-  ;;
-4)
   install_ADMRufu
-  ;;
-5)
-  install_ChumoGH
-  ;;
-6)
-  install_latam
   ;;
 esac
 exit
