@@ -1,5 +1,7 @@
 #!/bin/bash
 clear && clear
+tag="\033[0m"
+url='https://raw.githubusercontent.com/IDSOCIALMEDIA/botsshzap/main/key'
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 
@@ -226,6 +228,24 @@ while :; do
   *) exit ;;
   esac
 done
+echo ''
+echo -e "${red}${linha}${red}"
+tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "BEM VINDOÂª AO BOT VENDAS WHATSAPP" ; tput sgr0
+echo -e "${red}${linha}${tag}"
+echo -ne "${verde}DESEJA INSTALAR O CONJUNTO DE FERRAMENTAS\nPARA O USO DO BOT VENDAS WHATSAPP? (s/n)${tag}: ";
+read resp
+
+[[ "${resp}" = "S" || "${resp}" = "s" ]] && {
+  echo ''
+  echo -ne "${verde}INFORME A LICENÃ‡A:${tag} ";
+  read key
+
+
+[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && {
+  sleep 3s
+  echo -e "${red}KEY INVALIDA${tag}"
+  exit 1
+} ||
 
 clear && clear
 msg -bar
@@ -303,3 +323,4 @@ case $opcao in
   ;;
 esac
 exit
+[[ "${resp}" != "N" || "${resp}" != "n" || "${resp}" != "S" || "${resp}" != "s" ]] && exit 1
