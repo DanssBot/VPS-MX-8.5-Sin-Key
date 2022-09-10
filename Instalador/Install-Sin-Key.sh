@@ -280,8 +280,7 @@ install_ADMRufu() {
   update-locale LANG=en_US.UTF-8 LANGUAGE=en
   clear && clear
   msg -bar
-  msg -bar
-  figlet $mess1 | lolcat 
+  figlet "Completado" | lolcat 
   msg -bar
   echo -e "\e[1;92m             >> LA INSTALACIÓN FUE UN ÉXITO <<" && msg bar2
   msg -bar
