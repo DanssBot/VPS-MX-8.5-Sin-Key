@@ -282,12 +282,12 @@ install_ADMRufu() {
   msg -bar
   figlet "Completado" | lolcat 
   msg -bar
-  echo -e "\e[1;92m             >> LA INSTALACIÓN FUE UN ÉXITO <<" && msg bar2
+  echo -e "\e[1;92m             >>LA INSTALACIÓN FUE UN ÉXITO<<" && msg bar2
   msg -bar
   echo -e "\e[1;92m             >> HEMOS TERMINADO <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-msg -ama "               Afinando Detalles de la Instalación" && msg bar2
+msg -ama "               Listo ya puedes hacer uso del script mod" && msg bar2
 }
 
 #MENUS
