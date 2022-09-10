@@ -167,7 +167,7 @@ post_reboot() {
 install_start() {
   msg -bar
   msg -bar
-  figlet " Actualizando" | lolcat 
+  figlet "Actualizar" | lolcat 
   msg -bar
   #echo -e " \e[5m\033[1;100m   =====>> ►► ⏳ ACTUALIZANDO ⏳ ◄◄ <<=====   \033[1;37m"
   #msg -bar
@@ -190,7 +190,7 @@ install_continue() {
   os_system
   msg -bar
   msg -bar
-  figlet " Instalando" | lolcat 
+  figlet "Instalando" | lolcat 
   msg -bar
   #echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ INSTALANDO PAQUETES 🖥️  ◄◄ <<=====   \033[1;37m"
   #msg -bar
