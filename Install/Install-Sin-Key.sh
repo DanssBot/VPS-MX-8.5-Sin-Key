@@ -251,8 +251,6 @@ print_center -azu "POR FAVOR INTRODUCE LA KEY O SOLICITA CON @DansBotMx"|lolcat
   echo -e "${red}KEY INVALIDA${tag}"
   exit 1
 
-} ||
-
 clear && clear
 msg -bar
 msg -bar
