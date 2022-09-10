@@ -94,7 +94,7 @@ stop_install() {
 }
 
 time_reboot() {
-  print_center -ama "REINICIANDO VPS EN $1 SEGUNDOS"
+  print_center -ama "REINICIANDO VPS EN $1 SEGUNDOS"|lolcat
   REBOOT_TIMEOUT="$1"
 
   while [ $REBOOT_TIMEOUT -gt 0 ]; do
@@ -160,7 +160,7 @@ msg -bar
 post_reboot() {
   echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTULIZACION DE SISTEMA COMPLETA"
-  print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
+  print_center -ama "La instalacion continuara\ndespues del reinicio!!!"|lolcat
   msg -bar
 }
 
