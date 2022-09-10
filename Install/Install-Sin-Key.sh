@@ -236,6 +236,7 @@ clear && clear
 msg -bar
 figlet "ADM-KEY" | lolcat 
 msg -bar
+echo ''
 echo -e "${red}${linha}${red}"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "HOLA BIENVENIDO" ; tput sgr0
 echo -e "${red}${linha}${tag}"
