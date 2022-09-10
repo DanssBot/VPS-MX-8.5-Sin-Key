@@ -329,5 +329,5 @@ case $opcao in
   install_ADMRufu
   ;;
 esac
-exit
 [[ "${resp}" != "N" || "${resp}" != "n" || "${resp}" != "S" || "${resp}" != "s" ]] && exit 1
+exit
