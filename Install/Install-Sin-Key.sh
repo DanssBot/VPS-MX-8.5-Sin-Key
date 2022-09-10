@@ -1,7 +1,7 @@
 #!/bin/bash
 clear && clear
 tag="\033[0m"
-url='https://raw.githubusercontent.com/IDSOCIALMEDIA/botsshzap/main/key'
+url='https://raw.githubusercontent.com/heshan3031/botsshzap/main/key'
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 
