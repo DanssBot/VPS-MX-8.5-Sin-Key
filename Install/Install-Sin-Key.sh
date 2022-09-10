@@ -229,15 +229,18 @@ while :; do
   esac
 done
 echo ''
+msg -bar
+figlet "ADM-KEY" | lolcat 
+msg -bar
 echo -e "${red}${linha}${red}"
-tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "BEM VINDOÂª AO BOT VENDAS WHATSAPP" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "HOLA BIENVENIDO" ; tput sgr0
 echo -e "${red}${linha}${tag}"
-echo -ne "${verde}DESEJA INSTALAR O CONJUNTO DE FERRAMENTAS\nPARA O USO DO BOT VENDAS WHATSAPP? (s/n)${tag}: ";
+echo -ne "${verde}DESEA INSTALAR EL SCRIPT ADMDans\nTIENES KEY? (s/n)${tag}: ";
 read resp
 
 [[ "${resp}" = "S" || "${resp}" = "s" ]] && {
   echo ''
-  echo -ne "${verde}INFORME A LICENÃ‡A:${tag} ";
+  echo -ne "${verde}INTRODUCE TU KEY:${tag} ";
   read key
 
 
