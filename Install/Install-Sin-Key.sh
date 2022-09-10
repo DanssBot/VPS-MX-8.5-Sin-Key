@@ -237,10 +237,6 @@ msg -bar
 figlet "ADM-KEY" | lolcat 
 msg -bar
 echo ''
-echo -e "${red}${linha}${red}"
-tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "HOLA BIENVENIDO" ; tput sgr0
-echo -e "${red}${linha}${tag}"
-#echo -ne "${verde}DESEA INSTALAR EL SCRIPT ADMDans\nTIENES ALGUNA KEY? (s/n)${tag}: ";
 print_center -azu "POR FAVOR INTRODUCE LA KEY O SOLICITA CON @DansBotMx"|lolcat
 #read resp
 
