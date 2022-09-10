@@ -166,12 +166,11 @@ post_reboot() {
 
 install_start() {
   msg -bar
-  msg -bar
   figlet "Actualizar" | lolcat 
   msg -bar
   #echo -e " \e[5m\033[1;100m   =====>> ►► ⏳ ACTUALIZANDO ⏳ ◄◄ <<=====   \033[1;37m"
   #msg -bar
-  print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
+  print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"|lolcat
   msg -bar3
   msg -ne "\n Desea continuar? [S/N]: "
   read opcion
@@ -189,24 +188,23 @@ install_start() {
 install_continue() {
   os_system
   msg -bar
-  msg -bar
   figlet "Instalando" | lolcat 
   msg -bar
   #echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ INSTALANDO PAQUETES 🖥️  ◄◄ <<=====   \033[1;37m"
   #msg -bar
   print_center -ama "$distro $vercion"
-  print_center -verd "INSTALANDO DEPENDENCIAS"
+  print_center -verd "INSTALANDO DEPENDENCIAS"|lolcat
   msg -bar3
   dependencias
   msg -bar3
   sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf >/dev/null 2>&1
   service apache2 restart >/dev/null 2>&1
-  print_center -azu "Removiendo paquetes obsoletos"
+  print_center -azu "Removiendo paquetes obsoletos"|lolcat
   apt autoremove -y &>/dev/null
   sleep 2
   tput cuu1 && tput dl1
   msg -bar
-  print_center -ama "Si algunas de las dependencias fallo!!!\nal terminar, puede intentar instalar\nla misma manualmente usando el siguiente comando\napt install nom_del_paquete"
+  print_center -ama "Si algunas de las dependencias fallo!!!\nal terminar, puede intentar instalar\nla misma manualmente usando el siguiente comando\napt install nom_del_paquete"|lolcat
   msg -bar
   read -t 60 -n 1 -rsp $'\033[1;39m       << Presiona enter para Continuar >>\n'
 }
