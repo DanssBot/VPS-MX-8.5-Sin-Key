@@ -241,11 +241,12 @@ echo -e "${red}${linha}${red}"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf "${alinhado}" "HOLA BIENVENIDO" ; tput sgr0
 echo -e "${red}${linha}${tag}"
 #echo -ne "${verde}DESEA INSTALAR EL SCRIPT ADMDans\nTIENES ALGUNA KEY? (s/n)${tag}: ";
+print_center -azu "POR FAVOR INTRODUCE LA KEY O SOLICITA CON @DansBotMx"|lolcat
 #read resp
 
 #[[ "${resp}" = "S" || "${resp}" = "s" ]] && {
   echo ''
-  echo -ne "${verde}INTRODUCE TU KEY:${tag} ";
+  echo -ne "${verde}╰══════➤${tag} ";
   read key
 
 
@@ -311,12 +312,12 @@ install_ADMRufu() {
   msg -bar
   figlet "Completado" | lolcat 
   msg -bar
-  echo -e "\e[1;92m             >>LA INSTALACIÓN FUE UN ÉXITO<<" && msg bar2
+  echo -e "\e[1;92m            >>LA INSTALACIÓN FUE UN ÉXITO<<" && msg bar2
   msg -bar
-  echo -e "\e[1;92m             >> HEMOS TERMINADO <<" && msg bar2
+  echo -e "\e[1;92m            >> HEMOS TERMINADO <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-msg -ama "               Listo ya puedes hacer uso del script mod" && msg bar2
+msg -ama "            Listo ya puedes hacer uso del script mod" && msg bar2
 }
 
 #MENUS
