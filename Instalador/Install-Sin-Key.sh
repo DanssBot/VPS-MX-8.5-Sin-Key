@@ -166,9 +166,11 @@ post_reboot() {
 
 install_start() {
   msg -bar
-
-  echo -e " \e[5m\033[1;100m   =====>> ►► ⏳ ACTUALIZANDO ⏳ ◄◄ <<=====   \033[1;37m"
   msg -bar
+  figlet " Actualizando" | lolcat 
+  msg -bar
+  #echo -e " \e[5m\033[1;100m   =====>> ►► ⏳ ACTUALIZANDO ⏳ ◄◄ <<=====   \033[1;37m"
+  #msg -bar
   print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
   msg -bar3
   msg -ne "\n Desea continuar? [S/N]: "
@@ -187,8 +189,11 @@ install_start() {
 install_continue() {
   os_system
   msg -bar
-  echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ INSTALANDO PAQUETES 🖥️  ◄◄ <<=====   \033[1;37m"
   msg -bar
+  figlet " Instalando" | lolcat 
+  msg -bar
+  #echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ INSTALANDO PAQUETES 🖥️  ◄◄ <<=====   \033[1;37m"
+  #msg -bar
   print_center -ama "$distro $vercion"
   print_center -verd "INSTALANDO DEPENDENCIAS"
   msg -bar3
@@ -230,7 +235,7 @@ msg -bar
 figlet " Bienvenido" | lolcat 
 msg -bar
 #echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT DANSMX 🖥️  ◄◄ <<=====   \033[1;37m"
-msg -bar
+#msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
