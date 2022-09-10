@@ -225,8 +225,11 @@ while :; do
 done
 
 clear && clear
-msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT DANSMX 🖥️  ◄◄ <<=====   \033[1;37m"
+msg -bar
+msg -bar
+figlet " Bienvenido" | lolcat 
+msg -bar
+#echo -e " \e[5m\033[1;100m   =====>> ►►  🖥️ SCRIPT DANSMX 🖥️  ◄◄ <<=====   \033[1;37m"
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
@@ -237,9 +240,9 @@ install_ADMRufu() {
   clear && clear
   msg -bar
   msg -bar
-  figlet " SLOGAN" | lolcat 
+  figlet " RESELLER" | lolcat 
   msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
+  echo -ne "\033[1;97m Digite su Reseller: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
@@ -269,21 +272,26 @@ install_ADMRufu() {
   echo -e "[[ \$(date '+%s' -d \$up) -gt \$(date '+%s' -d \$(cat /etc/ADMRufu/vercion)) ]] && v2=\"Nueva Vercion disponible: \$v >>> \$up\" || v2=\"Script Vercion: \$v\"" >>/etc/bash.bashrc
   echo '[[ -e "/etc/ADMRufu/tmp/message.txt" ]] && mess1="$(less /etc/ADMRufu/tmp/message.txt)"' >>/etc/bash.bashrc
   echo '[[ -z "$mess1" ]] && mess1="@Rufu99"' >>/etc/bash.bashrc
-  echo 'clear && echo -e "\n$(figlet -f big.flf "  DANSMX")\n        RESELLER : $mess1 \n\n   Para iniciar DANSMX escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
+  echo 'clear && echo -e "\n$(figlet -f big.flf "  ADMDans")\n        RESELLER : $mess1 \n\n   Para iniciar ADMDans escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
 
   update-locale LANG=en_US.UTF-8 LANGUAGE=en
   clear && clear
   msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
+  msg -bar
+  figlet $mess1 | lolcat 
+  msg -bar
+  echo -e "\e[1;92m             >> LA INSTALACIÓN FUE UN ÉXITO <<" && msg bar2
+  msg -bar
+  echo -e "\e[1;92m             >> HEMOS TERMINADO <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-msg -ama "               Estamos Finalizando la Instalación" && msg bar2
+msg -ama "               Afinando Detalles de la Instalación" && msg bar2
 }
 
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRDans MOD \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao
