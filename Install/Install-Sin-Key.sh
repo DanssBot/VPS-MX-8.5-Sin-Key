@@ -228,7 +228,7 @@ while :; do
   *) exit ;;
   esac
 done
-echo ''
+
 msg -bar
 figlet "ADM-KEY" | lolcat 
 msg -bar
