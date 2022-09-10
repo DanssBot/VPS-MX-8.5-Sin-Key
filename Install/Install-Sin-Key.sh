@@ -252,6 +252,7 @@ read resp
   sleep 3s
   echo -e "${red}KEY INVALIDA${tag}"
   exit 1
+}
 } ||
 
 clear && clear
