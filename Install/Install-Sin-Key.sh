@@ -162,7 +162,7 @@ clear
 msg -bar
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/DanssBot/VPS-MX-8.5-Sin-Key/main/Install/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTULIZACION DE SISTEMA COMPLETA"
   print_center -ama "La instalacion continuara\ndespues del reinicio!!!"|lolcat
   msg -bar
