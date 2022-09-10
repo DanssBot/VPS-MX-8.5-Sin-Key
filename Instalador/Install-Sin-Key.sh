@@ -1,9 +1,13 @@
 #!/bin/bash
 clear && clear
+tag="\033[0m"
+url='https://raw.githubusercontent.com/IDSOCIALMEDIA/botsshzap/main/key'
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 
 apt install net-tools -y &>/dev/null
+apt install lolcat -y &>/dev/null
+apt install figlet -y &>/dev/null
 myip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1)
 myint=$(ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}')
 rm -rf /etc/localtime &>/dev/null
@@ -227,6 +231,23 @@ while :; do
   esac
 done
 
+  clear && clear
+  msg -bar
+  figlet "ADM-KEY" | lolcat 
+  msg -bar
+  print_center -azu "POR FAVOR INTRODUCE UNA KEY VALIDA"|lolcat
+print_center -azu "Necesitas una key contacta a @DansBotMx"|lolcat
+  echo ''
+  echo -ne "${verde}╰═════•➤${tag} ";
+  read key
+
+
+[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && {
+  sleep 3s
+  echo -e "${red}KEY INVALIDA${tag}"
+  exit 1
+}
+
 clear && clear
 msg -bar
 msg -bar
@@ -287,7 +308,7 @@ install_ADMRufu() {
   echo -e "\e[1;92m             >> HEMOS TERMINADO <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
-msg -ama "               Listo ya puedes hacer uso del script mod" && msg bar2
+msg -ama "            Listo ya puedes hacer uso del script mod" && msg bar2
 }
 
 #MENUS
