@@ -250,7 +250,7 @@ print_center -azu "POR FAVOR INTRODUCE LA KEY O SOLICITA CON @DansBotMx"|lolcat
   sleep 3s
   echo -e "${red}KEY INVALIDA${tag}"
   exit 1
-
+  }
 clear && clear
 msg -bar
 msg -bar
@@ -326,6 +326,4 @@ case $opcao in
   install_ADMRufu
   ;;
 esac
-}
-[[ "${resp}" != "N" || "${resp}" != "n" || "${resp}" != "S" || "${resp}" != "s" ]] && exit 1
 exit
